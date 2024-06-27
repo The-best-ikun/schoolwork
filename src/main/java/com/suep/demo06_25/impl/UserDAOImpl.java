@@ -13,6 +13,8 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void signInUser(User user) throws SQLException {
         String sqlStr="select * from user where userID= ? and where password= ?";
+        Connection connection=MySQLUntil.getConnection();
+        PreparedStatement preparedStatement=
     }
 
     @Override
