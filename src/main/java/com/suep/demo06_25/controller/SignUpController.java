@@ -68,6 +68,7 @@ public class SignUpController {
         showSuccessAlert();
 
     }
+
     private void showSuccessAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("账号注册");

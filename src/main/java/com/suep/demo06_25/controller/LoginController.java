@@ -27,7 +27,7 @@ public class LoginController {
     private UserService userService;
 
     public LoginController(){
-
+        userService=new UserService();
     }
 
     @FXML
@@ -38,9 +38,6 @@ public class LoginController {
             throw new RuntimeException(e);
         }
     }
-
-
-
 
 
 //    绑定组件上的方法
@@ -78,12 +75,16 @@ public class LoginController {
 
 
 
-//        然后是进入数据库进行验证，这里暂时不写
+    //然后是进入数据库进行验证，这里暂时不写
+
+
     }
-    //        点击注册转换窗口的方法
+
+    //点击注册转换窗口的方法
     public void intoSignUp(){
         Main.changeView("signup-view.fxml");
     }
-
+    //登录成功进入首页
+    public void intoIndex(){Main.changeView("index-view.fxml");}
 
 }

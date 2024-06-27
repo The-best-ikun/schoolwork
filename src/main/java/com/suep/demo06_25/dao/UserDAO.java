@@ -7,4 +7,7 @@ import java.sql.SQLException;
 public interface UserDAO {
     // 用户注册
     void registerUser(User user) throws SQLException;
+
+    // 用户登录
+    void signInUser(User user) throws SQLException;
 }

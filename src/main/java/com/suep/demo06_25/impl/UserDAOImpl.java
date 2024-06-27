@@ -11,6 +11,11 @@ import java.sql.SQLException;
 // UserDAOImpl实现类
 public class UserDAOImpl implements UserDAO {
     @Override
+    public void signInUser(User user) throws SQLException {
+        String sqlStr="select * from user where userID= ? and where password= ?";
+    }
+
+    @Override
     public void registerUser(User user) throws SQLException {
         String sqlStr = "insert into user values(?,?,?,?,?)";
         Connection connection = MySQLUntil.getConnection();

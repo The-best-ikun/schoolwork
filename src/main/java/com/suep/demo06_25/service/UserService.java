@@ -14,7 +14,6 @@ public class UserService {
 
     public void register(String id, String password1, String password2, String phone, String email) throws Exception {
 
-
         // 根据id判断用户身份
         String identity = determineIdentity(id);
 
