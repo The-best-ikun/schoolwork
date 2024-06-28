@@ -9,5 +9,5 @@ public interface UserDAO {
     void registerUser(User user) throws SQLException;
 
     // 用户登录
-    void signInUser(User user) throws SQLException;
+    boolean signInUser(User user) throws SQLException;
 }

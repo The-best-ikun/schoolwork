@@ -14,6 +14,7 @@ public class User {
         this.phone = phone;
         this.identity = identity;
     }
+    public User(){}
 
     // Getter和Setter方法
     public String getId() {

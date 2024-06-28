@@ -6,16 +6,30 @@ import com.suep.demo06_25.untils.MySQLUntil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // UserDAOImpl实现类
 public class UserDAOImpl implements UserDAO {
     @Override
-    public void signInUser(User user) throws SQLException {
-        String sqlStr="select * from user where userID= ? and where password= ?";
+    public boolean signInUser(User user) throws SQLException {
+        String sqlStr="select * from user where userID= ? and password= ?";
         Connection connection=MySQLUntil.getConnection();
-        PreparedStatement preparedStatement=connection.prepareStatement(sqlStr)
+        PreparedStatement preparedStatement=connection.prepareStatement(sqlStr);
+        preparedStatement.setString(1, user.getId());
+        preparedStatement.setString(2, user.getPassword());
 
+        // 这里添加了获取结果集的代码,判断是否为空
+        ResultSet resultSet = preparedStatement.executeQuery();
+        // 关闭资源
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+        //登录验证成功返回true，否则false
+        if(resultSet.isBeforeFirst()){
+            return true;
+        }else {
+            return false;
         }
     }
 
@@ -31,8 +45,10 @@ public class UserDAOImpl implements UserDAO {
             preparedStatement.setString(5, user.getIdentity());
             preparedStatement.execute();
         } finally {
+
 //            关闭连接
             connection.close();
+
         }
     }
 }

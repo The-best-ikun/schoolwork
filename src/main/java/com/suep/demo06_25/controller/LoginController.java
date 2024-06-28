@@ -72,11 +72,12 @@ public class LoginController {
         else if (verifyText.toUpperCase().equals(VerifyImageUntil.verifyStr.toUpperCase())) {
             info.setText("验证码正确");
         }
-
-
-
-    //然后是进入数据库进行验证，这里暂时不写
-
+        if (!userService.signIn(accountText,passwordText)){
+            info.setText("用户ID或密码错误");
+        }else{
+//            登录成功进入主页
+              intoIndex();
+        }
 
     }
 

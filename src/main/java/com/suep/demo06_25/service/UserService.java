@@ -4,6 +4,8 @@ import com.suep.demo06_25.dao.UserDAO;
 import com.suep.demo06_25.impl.UserDAOImpl;
 import com.suep.demo06_25.model.User;
 
+import java.sql.SQLException;
+
 // UserService类
 public class UserService {
     private UserDAO userDAO;
@@ -22,6 +24,15 @@ public class UserService {
 
         // 调用DAO层的方法注册用户
         userDAO.registerUser(user);
+    }
+
+    public boolean signIn(String id,String password){
+        User user=new User();
+        try {
+           return userDAO.signInUser(user);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private String determineIdentity(String id) {
