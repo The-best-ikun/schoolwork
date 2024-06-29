@@ -1,7 +1,6 @@
-package com.suep.demo06_25.untils;
+package com.suep.demo06_25.utils;
 
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 import javax.imageio.ImageIO;
 import java.io.ByteArrayInputStream;
@@ -16,7 +15,7 @@ import java.util.Random;
 //这个总感觉不太舒服
 
 
-public class VerifyImageUntil {
+public class VerifyImageUtil {
     static String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     static final int WIDTH = 120;
     static final int HEIGHT = 40;

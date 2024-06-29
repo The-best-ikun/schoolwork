@@ -1,16 +1,10 @@
 package com.suep.demo06_25.controller;
 
 import com.suep.demo06_25.service.UserService;
-import com.suep.demo06_25.untils.MySQLUntil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.w3c.dom.Text;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class SignUpController {
     @FXML

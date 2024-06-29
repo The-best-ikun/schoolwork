@@ -2,7 +2,7 @@ package com.suep.demo06_25.impl;
 
 import com.suep.demo06_25.dao.UserDAO;
 import com.suep.demo06_25.pojo.User;
-import com.suep.demo06_25.untils.MySQLUntil;
+import com.suep.demo06_25.utils.MySQLUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public boolean signInUser(User user) throws SQLException {
         String sqlStr="select * from user where userID= ? and userPassword= ?";
-        Connection connection=MySQLUntil.getConnection();
+        Connection connection= MySQLUtil.getConnection();
         PreparedStatement preparedStatement=connection.prepareStatement(sqlStr);
         preparedStatement.setString(1, user.getId());
         preparedStatement.setString(2, user.getPassword());
@@ -39,7 +39,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void registerUser(User user) throws SQLException {
         String sqlStr = "insert into user values(?,?,?,?,?)";
-        Connection connection = MySQLUntil.getConnection();
+        Connection connection = MySQLUtil.getConnection();
         try (PreparedStatement preparedStatement = connection.prepareStatement(sqlStr)) {
             preparedStatement.setString(1, user.getId());
             preparedStatement.setString(2, user.getPassword());

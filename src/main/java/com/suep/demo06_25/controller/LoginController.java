@@ -2,7 +2,7 @@ package com.suep.demo06_25.controller;
 
 import com.suep.demo06_25.Main;
 import com.suep.demo06_25.service.UserService;
-import com.suep.demo06_25.untils.VerifyImageUntil;
+import com.suep.demo06_25.utils.VerifyImageUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -32,7 +32,7 @@ public class LoginController {
     @FXML
     public void verifyAgain(){
         try {
-            verifyImage.setImage(VerifyImageUntil.generateCaptchaImageView());
+            verifyImage.setImage(VerifyImageUtil.generateCaptchaImageView());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -45,7 +45,7 @@ public class LoginController {
     //  初始化一下验证码
     //  利用了AWT，可能会有IO异常
         try {
-            verifyImage.setImage(VerifyImageUntil.generateCaptchaImageView());
+            verifyImage.setImage(VerifyImageUtil.generateCaptchaImageView());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -68,7 +68,7 @@ public class LoginController {
             info.setVisible(true);
         }
 //      进入验证码验证,忽略字母大小写
-        else if (verifyText.toUpperCase().equals(VerifyImageUntil.verifyStr.toUpperCase())) {
+        else if (verifyText.toUpperCase().equals(VerifyImageUtil.verifyStr.toUpperCase())) {
             info.setText("验证码正确");
         }
         if (userService.signIn(accountText,passwordText)){

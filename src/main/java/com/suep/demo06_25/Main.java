@@ -3,6 +3,7 @@ package com.suep.demo06_25;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
@@ -26,7 +27,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         Main.stage = stage;
         stage.setTitle("教务管理系统登录界面");
-        changeView("login-view.fxml");
+        changeView("student/index-view.fxml");
     }
 
     //    写一个便于切换界面的方法
@@ -59,7 +60,9 @@ public class Main extends Application {
     public static void loadRightFXML(String fxmlPath, ScrollPane scrollPane) {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlPath));
-            AnchorPane pane = loader.load();
+            Node pane = loader.load();
+            // 清除旧的内容
+            scrollPane.setContent(null);
             scrollPane.setContent(pane);
         } catch (Exception e) {
             e.printStackTrace();
