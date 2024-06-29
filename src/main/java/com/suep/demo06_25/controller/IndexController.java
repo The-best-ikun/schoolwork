@@ -30,6 +30,7 @@ public class IndexController {
         loadRightFXML("student/index-right/basicInfo-view.fxml",scrollPane);
 //        loadContentIntoScrollPane("/index-right/basicInfo-view.fxml");
         System.out.println("加载右端初始界面");
+
     }
 
 
