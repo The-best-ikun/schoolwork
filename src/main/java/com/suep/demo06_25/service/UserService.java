@@ -2,7 +2,7 @@ package com.suep.demo06_25.service;
 
 import com.suep.demo06_25.dao.UserDAO;
 import com.suep.demo06_25.impl.UserDAOImpl;
-import com.suep.demo06_25.model.User;
+import com.suep.demo06_25.pojo.User;
 
 import java.sql.SQLException;
 
@@ -28,6 +28,8 @@ public class UserService {
 
     public boolean signIn(String id,String password){
         User user=new User();
+        user.setId(id);
+        user.setPassword(password);
         try {
            return userDAO.signInUser(user);
         } catch (SQLException e) {

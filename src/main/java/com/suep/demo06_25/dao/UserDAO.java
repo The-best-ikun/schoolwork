@@ -1,6 +1,6 @@
 package com.suep.demo06_25.dao;
 
-import com.suep.demo06_25.model.User;
+import com.suep.demo06_25.pojo.User;
 
 import java.sql.SQLException;
 

@@ -1,7 +1,7 @@
 package com.suep.demo06_25.impl;
 
 import com.suep.demo06_25.dao.UserDAO;
-import com.suep.demo06_25.model.User;
+import com.suep.demo06_25.pojo.User;
 import com.suep.demo06_25.untils.MySQLUntil;
 
 import java.sql.Connection;
@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class UserDAOImpl implements UserDAO {
     @Override
     public boolean signInUser(User user) throws SQLException {
-        String sqlStr="select * from user where userID= ? and password= ?";
+        String sqlStr="select * from user where userID= ? and userPassword= ?";
         Connection connection=MySQLUntil.getConnection();
         PreparedStatement preparedStatement=connection.prepareStatement(sqlStr);
         preparedStatement.setString(1, user.getId());
@@ -21,14 +21,17 @@ public class UserDAOImpl implements UserDAO {
 
         // 这里添加了获取结果集的代码,判断是否为空
         ResultSet resultSet = preparedStatement.executeQuery();
-        // 关闭资源
-        resultSet.close();
-        preparedStatement.close();
-        connection.close();
+
         //登录验证成功返回true，否则false
-        if(resultSet.isBeforeFirst()){
+        if(resultSet.next()){
+            // 关闭资源
+            preparedStatement.close();
+            connection.close();
             return true;
         }else {
+            // 关闭资源
+            preparedStatement.close();
+            connection.close();
             return false;
         }
     }

@@ -16,4 +16,6 @@ module com.suep.demo06_25 {
     exports com.suep.demo06_25;
     exports com.suep.demo06_25.controller;
     opens com.suep.demo06_25.controller to javafx.fxml;
+    // 打开pojo包给javafx.base模块
+    opens com.suep.demo06_25.pojo to javafx.base;
 }

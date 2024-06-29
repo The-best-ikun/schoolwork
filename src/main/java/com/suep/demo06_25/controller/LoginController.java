@@ -1,7 +1,6 @@
 package com.suep.demo06_25.controller;
 
 import com.suep.demo06_25.Main;
-import com.suep.demo06_25.model.User;
 import com.suep.demo06_25.service.UserService;
 import com.suep.demo06_25.untils.VerifyImageUntil;
 import javafx.fxml.FXML;
@@ -72,11 +71,11 @@ public class LoginController {
         else if (verifyText.toUpperCase().equals(VerifyImageUntil.verifyStr.toUpperCase())) {
             info.setText("验证码正确");
         }
-        if (!userService.signIn(accountText,passwordText)){
-            info.setText("用户ID或密码错误");
+        if (userService.signIn(accountText,passwordText)){
+            //登录成功进入主页
+            intoIndex();
         }else{
-//            登录成功进入主页
-              intoIndex();
+            info.setText("用户ID或密码错误");
         }
 
     }
@@ -85,7 +84,7 @@ public class LoginController {
     public void intoSignUp(){
         Main.changeView("signup-view.fxml");
     }
-    //登录成功进入首页
+    //登录成功进入首页窗口
     public void intoIndex(){Main.changeView("index-view.fxml");}
 
 }

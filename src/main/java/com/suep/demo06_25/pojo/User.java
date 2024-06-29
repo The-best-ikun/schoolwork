@@ -1,4 +1,4 @@
-package com.suep.demo06_25.model;
+package com.suep.demo06_25.pojo;
 
 public class User {
     private String id;
