@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="540.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.admin.StudentCrudViewController">
    <children>
@@ -22,23 +23,27 @@
             <TableColumn prefWidth="117.0" text="院系" />
         </columns>
       </TableView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="302.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <Label alignment="CENTER" layoutX="21.0" layoutY="361.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <TextField layoutX="85.0" layoutY="361.0" prefHeight="31.0" prefWidth="161.0" />
-      <Label alignment="CENTER" layoutX="21.0" layoutY="422.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <Label alignment="CENTER" layoutX="323.0" layoutY="287.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <Label alignment="CENTER" layoutX="323.0" layoutY="370.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <Label alignment="CENTER" layoutX="21.0" layoutY="469.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <Label alignment="CENTER" layoutX="323.0" layoutY="469.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <Label alignment="CENTER" layoutX="323.0" layoutY="333.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <Label alignment="CENTER" layoutX="323.0" layoutY="422.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
-      <TextField layoutX="85.0" layoutY="422.0" prefHeight="31.0" prefWidth="161.0" />
-      <TextField layoutX="85.0" layoutY="469.0" prefHeight="31.0" prefWidth="161.0" />
-      <TextField layoutX="387.0" layoutY="287.0" prefHeight="31.0" prefWidth="161.0" />
-      <TextField layoutX="387.0" layoutY="333.0" prefHeight="31.0" prefWidth="161.0" />
-      <TextField layoutX="387.0" layoutY="370.0" prefHeight="31.0" prefWidth="161.0" />
-      <TextField layoutX="387.0" layoutY="422.0" prefHeight="31.0" prefWidth="161.0" />
-      <TextField layoutX="387.0" layoutY="469.0" prefHeight="31.0" prefWidth="161.0" />
-      <Label layoutX="85.0" layoutY="302.0" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #95e1d3;" text="Label" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="303.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="学号" />
+      <Label alignment="CENTER" layoutX="21.0" layoutY="361.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="姓名" />
+      <TextField fx:id="textField1" layoutX="85.0" layoutY="361.0" prefHeight="31.0" prefWidth="161.0" />
+      <Label alignment="CENTER" layoutX="21.0" layoutY="407.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="性别" />
+      <Label alignment="CENTER" layoutX="323.0" layoutY="303.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="专业" />
+      <Label alignment="CENTER" layoutX="323.0" layoutY="407.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="籍贯" />
+      <Label alignment="CENTER" layoutX="21.0" layoutY="454.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="年龄" />
+      <Label alignment="CENTER" layoutX="323.0" layoutY="501.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="院系" />
+      <Label alignment="CENTER" layoutX="323.0" layoutY="361.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="电话" />
+      <Label alignment="CENTER" layoutX="323.0" layoutY="454.0" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: #3fc1c9;" text="入学时间" />
+      <TextField fx:id="textField2" layoutX="85.0" layoutY="407.0" prefHeight="31.0" prefWidth="161.0" />
+      <TextField fx:id="textField3" layoutX="85.0" layoutY="454.0" prefHeight="31.0" prefWidth="161.0" />
+      <TextField fx:id="textField4" layoutX="387.0" layoutY="303.0" prefHeight="31.0" prefWidth="161.0" />
+      <TextField fx:id="textField5" layoutX="387.0" layoutY="361.0" prefHeight="31.0" prefWidth="161.0" />
+      <TextField fx:id="textField6" layoutX="387.0" layoutY="407.0" prefHeight="31.0" prefWidth="161.0" />
+      <TextField fx:id="textField7" layoutX="387.0" layoutY="501.0" prefHeight="31.0" prefWidth="161.0" />
+      <Label layoutX="85.0" layoutY="303.0" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #95e1d3;" text="这里是只读信息" />
+      <DatePicker fx:id="dateField" layoutX="387.0" layoutY="454.0" prefHeight="31.0" prefWidth="161.0" />
+      <Button fx:id="button1" layoutX="598.0" layoutY="303.0" mnemonicParsing="false" onAction="#onButton1" prefHeight="31.0" prefWidth="132.0" text="增加学生" />
+      <Button layoutX="598.0" layoutY="361.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="132.0" text="删除学生" />
+      <Button layoutX="598.0" layoutY="407.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="132.0" text="修改学生" />
+      <Button fx:id="button4" layoutX="598.0" layoutY="454.0" mnemonicParsing="false" onAction="#onButton4" prefHeight="31.0" prefWidth="132.0" text="根据学号查询学生" />
    </children>
 </AnchorPane>
