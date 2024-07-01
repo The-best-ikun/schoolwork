@@ -7,6 +7,7 @@ public class Student {
     private String name;
     private String sex;
     private String age;
+    private String classno;
     private String major;
     private String phone;
     private String address;
@@ -15,11 +16,12 @@ public class Student {
     private byte[] picture;
 
 
-    public Student(String sno, String name, String sex, String age, String major, String phone, String address, String dept, Date time, byte[] picture) {
+    public Student(String sno, String name, String sex, String age, String classno, String major, String phone, String address, String dept, Date time, byte[] picture) {
         this.sno = sno;
         this.name = name;
         this.sex = sex;
         this.age = age;
+        this.classno = classno;
         this.major = major;
         this.phone = phone;
         this.address = address;
@@ -62,6 +64,14 @@ public class Student {
 
     public String getMajor() {
         return major;
+    }
+
+    public String getClassno() {
+        return classno;
+    }
+
+    public void setClassno(String classno) {
+        this.classno = classno;
     }
 
     public void setMajor(String major) {

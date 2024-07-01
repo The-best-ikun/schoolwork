@@ -18,4 +18,13 @@ module com.suep.demo06_25 {
     opens com.suep.demo06_25.controller to javafx.fxml;
     // 打开pojo包给javafx.base模块
     opens com.suep.demo06_25.pojo to javafx.base;
+
+
+
+
+    exports com.suep.demo06_25.controller.admin;
+    // 如果需要反射访问，则使用opens而不是exports
+    // opens com.suep.demo06_25.controller.admin to javafx.fxml;
+    // 使用opens而不是exports，以允许反射访问
+    opens com.suep.demo06_25.controller.admin to javafx.fxml;
 }

@@ -27,7 +27,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         Main.stage = stage;
         stage.setTitle("教务管理系统登录界面");
-        changeView("student/index-view.fxml");
+        changeView("admin/admin-index-right/student-crud-view.fxml");
     }
 
     //    写一个便于切换界面的方法

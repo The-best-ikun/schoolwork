@@ -27,8 +27,7 @@ public class IndexController {
     @FXML
     private void initialize() {
         // 初始加载第一个FXML文件
-        loadRightFXML("student/index-right/basicInfo-view.fxml",scrollPane);
-//        loadContentIntoScrollPane("/index-right/basicInfo-view.fxml");
+        loadRightFXML("student/index-right/student-crud-view",scrollPane);
         System.out.println("加载右端初始界面");
 
     }
@@ -36,7 +35,7 @@ public class IndexController {
 
     @FXML
     private void onButton1(){
-        loadRightFXML("student/index-right/basicInfo-view.fxml",scrollPane);
+        loadRightFXML("admin/index-right/student-crud-view",scrollPane);
         System.out.println("有反应吗");
     }
     @FXML

@@ -15,11 +15,11 @@ import java.util.List;
 public class StudentDAOImpl implements StudentDAO {
     //    直接在这里声明静态常量
     //    增加学生
-    private static final String INSERT_STUDENT_SQL = "INSERT INTO student (sno, name, sex, age, major, phone, address, dept, time, picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    private static final String INSERT_STUDENT_SQL = "INSERT INTO student (sno, name, sex,classno, age, major, phone, address, dept, time, picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?);";
     //    删除学生
     private static final String DELETE_STUDENT_SQL = "DELETE FROM student WHERE sno = ?;";
     //    更新学生
-    private static final String UPDATE_STUDENT_SQL = "UPDATE student SET name = ?, sex = ?, age = ?, major = ?, phone = ?, address = ?, dept = ?, time = ?, picture = ? WHERE sno = ?;";
+    private static final String UPDATE_STUDENT_SQL = "UPDATE student SET name = ?, sex = ?, age = ?,classno=?, major = ?, phone = ?, address = ?, dept = ?, time = ?, picture = ? WHERE sno = ?;";
     //    查询某个学生
     private static final String SELECT_STUDENT_BY_ID = "SELECT * FROM student WHERE sno = ?;";
     //   查询所有学生
@@ -43,12 +43,13 @@ public class StudentDAOImpl implements StudentDAO {
             preparedStatement.setString(2, student.getName());
             preparedStatement.setString(3, student.getSex());
             preparedStatement.setString(4, student.getAge());
-            preparedStatement.setString(5, student.getMajor());
-            preparedStatement.setString(6, student.getPhone());
-            preparedStatement.setString(7, student.getAddress());
-            preparedStatement.setString(8, student.getDept());
-            preparedStatement.setDate(9, new java.sql.Date(student.getTime().getTime()));
-            preparedStatement.setBytes(10, student.getPicture());
+            preparedStatement.setString(5, student.getClassno());
+            preparedStatement.setString(6, student.getMajor());
+            preparedStatement.setString(7, student.getPhone());
+            preparedStatement.setString(8, student.getAddress());
+            preparedStatement.setString(9, student.getDept());
+            preparedStatement.setDate(10, new java.sql.Date(student.getTime().getTime()));
+            preparedStatement.setBytes(11, student.getPicture());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -70,13 +71,14 @@ public class StudentDAOImpl implements StudentDAO {
             preparedStatement.setString(1, student.getName());
             preparedStatement.setString(2, student.getSex());
             preparedStatement.setString(3, student.getAge());
-            preparedStatement.setString(4, student.getMajor());
-            preparedStatement.setString(5, student.getPhone());
-            preparedStatement.setString(6, student.getAddress());
-            preparedStatement.setString(7, student.getDept());
-            preparedStatement.setDate(8, new java.sql.Date(student.getTime().getTime()));
-            preparedStatement.setBytes(9, student.getPicture());
-            preparedStatement.setString(10, student.getSno());
+            preparedStatement.setString(4, student.getClassno());
+            preparedStatement.setString(5, student.getMajor());
+            preparedStatement.setString(6, student.getPhone());
+            preparedStatement.setString(7, student.getAddress());
+            preparedStatement.setString(8, student.getDept());
+            preparedStatement.setDate(9,new java.sql.Date(student.getTime().getTime()));
+            preparedStatement.setBytes(10, student.getPicture());
+            preparedStatement.setString(11, student.getSno());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -100,6 +102,7 @@ public class StudentDAOImpl implements StudentDAO {
                 String name = resultSet.getString("name");
                 String sex = resultSet.getString("sex");
                 String age = resultSet.getString("age");
+                String classno = resultSet.getString("classno");
                 String major = resultSet.getString("major");
                 String phone = resultSet.getString("phone");
                 String address = resultSet.getString("address");
@@ -107,7 +110,7 @@ public class StudentDAOImpl implements StudentDAO {
                 Date time = resultSet.getDate("time");
                 byte[] picture = resultSet.getBytes("picture");
 
-                student = new Student(sno, name, sex, age, major, phone, address, dept, time, picture);
+                student = new Student(sno, name, sex, classno,age, major, phone, address, dept, time, picture);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -127,13 +130,14 @@ public class StudentDAOImpl implements StudentDAO {
                 String name = resultSet.getString("name");
                 String sex = resultSet.getString("sex");
                 String age = resultSet.getString("age");
+                String classno = resultSet.getString("classno");
                 String major = resultSet.getString("major");
                 String phone = resultSet.getString("phone");
                 String address = resultSet.getString("address");
                 String dept = resultSet.getString("dept");
                 Date time = resultSet.getDate("time");
                 byte[] picture = resultSet.getBytes("picture");
-                Student student = new Student(sno, name, sex, age, major, phone, address, dept, time, picture);
+                Student student = new Student(sno, name, sex, age,classno, major, phone, address, dept, time, picture);
                 students.add(student);
             }
         } catch (SQLException e) {
