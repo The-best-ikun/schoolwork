@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="527.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.admin.TeacherCrudViewController">
+   <children>
+      <TableView fx:id="tableView" layoutX="4.0" layoutY="14.0" onSort="#onTableViev" prefHeight="229.0" prefWidth="725.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="19.0" layoutY="265.0" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: pink;" text="工号" />
+      <Label alignment="CENTER" layoutX="19.0" layoutY="318.0" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: pink;" text="姓名" />
+      <Label alignment="CENTER" layoutX="300.0" layoutY="318.0" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: pink;" text="年龄" />
+      <TextField fx:id="textField1" layoutX="68.0" layoutY="318.0" prefHeight="35.0" prefWidth="164.0" />
+      <TextField fx:id="textField4" layoutX="349.0" layoutY="318.0" prefHeight="35.0" prefWidth="207.0" />
+      <TextField fx:id="textField2" layoutX="64.0" layoutY="382.0" prefHeight="35.0" prefWidth="164.0" />
+      <Label alignment="CENTER" layoutX="19.0" layoutY="382.0" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: pink;" text="电话" />
+      <Label alignment="CENTER" layoutX="300.0" layoutY="375.0" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: pink;" text="院系" />
+      <Label alignment="CENTER" layoutX="300.0" layoutY="447.0" prefHeight="35.0" prefWidth="49.0" style="-fx-background-color: pink;" text="职称" />
+      <Label alignment="CENTER" layoutX="19.0" layoutY="447.0" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: pink;" text="入职时间" />
+      <DatePicker fx:id="datePicker" layoutX="109.0" layoutY="447.0" onAction="#onDatePicker" prefHeight="35.0" prefWidth="125.0" />
+      <TextField fx:id="textFiled5" layoutX="349.0" layoutY="375.0" prefHeight="35.0" prefWidth="207.0" />
+      <TextField fx:id="textField6" layoutX="349.0" layoutY="447.0" prefHeight="35.0" prefWidth="207.0" />
+      <Button fx:id="button1" layoutX="464.0" layoutY="265.0" mnemonicParsing="false" onAction="#onButton1" prefHeight="35.0" prefWidth="97.0" text="根据工号查找" />
+      <Label layoutX="68.0" layoutY="265.0" prefHeight="35.0" prefWidth="164.0" style="-fx-background-color: grey;" text="这里只是可读信息" />
+      <TextField fx:id="textField3" layoutX="300.0" layoutY="265.0" prefHeight="35.0" prefWidth="164.0" />
+      <Button fx:id="button2" layoutX="602.0" layoutY="265.0" mnemonicParsing="false" onAction="#onButton2" prefHeight="35.0" prefWidth="112.0" text="查询所有" />
+      <Button fx:id="button3" layoutX="602.0" layoutY="318.0" mnemonicParsing="false" onAction="#onButton3" prefHeight="35.0" prefWidth="112.0" text="增加教师信息" />
+      <Button fx:id="button4" layoutX="602.0" layoutY="382.0" mnemonicParsing="false" onAction="#onButton4" prefHeight="35.0" prefWidth="112.0" text="修改教师信息" />
+      <Button fx:id="button5" layoutX="602.0" layoutY="447.0" mnemonicParsing="false" onAction="#onButton5" prefHeight="35.0" prefWidth="112.0" text="删除教师信息" />
+   </children>
+</AnchorPane>
