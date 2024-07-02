@@ -11,6 +11,8 @@ module com.suep.demo06_25 {
     requires java.desktop;
     requires mysql.connector.j;
     requires java.sql;
+    requires rt;
+    requires jfxrt;
 
     opens com.suep.demo06_25 to javafx.fxml;
     exports com.suep.demo06_25;
