@@ -14,7 +14,17 @@ public class UserDAOImpl implements UserDAO {
     public void signInUser(User user) throws SQLException {
         String sqlStr="select * from user where userID= ? and where password= ?";
         Connection connection=MySQLUntil.getConnection();
-        PreparedStatement preparedStatement=
+
+    }
+
+    public void deleteUserById(int id) throws SQLException {
+        String sql="delete from user where id = ?";
+        Connection connection= MySQLUntil.getConnection();
+        PreparedStatement pst = connection.prepareStatement(sql);
+        pst.setInt(1,id);
+        pst.executeUpdate();
+        connection.close();
+        pst.close();
     }
 
     @Override
