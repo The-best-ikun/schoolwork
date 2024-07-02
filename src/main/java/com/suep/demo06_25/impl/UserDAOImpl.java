@@ -36,6 +36,22 @@ public class UserDAOImpl implements UserDAO {
         }
     }
 
+
+    //检验账号是否已被注册
+    @Override
+    public boolean checkRegister(User user) throws SQLException {
+        String sql="select * from User where id = ?";  //从数据库查询用户输入的id
+        Connection connection = MySQLUtil.getConnection();
+        PreparedStatement pst =connection.prepareStatement(sql);
+        pst.setString(1,user.getId());  //传入用户输入的id
+        ResultSet resultSet = pst.executeQuery();
+        if(resultSet.next()){
+            return false;  //如果数据库中查到了用户输入的id就返回false（已被注册）
+        }else {
+            return true;  //如果数据库中没查到用户输入的id就返回true（未被注册）
+        }
+    }
+
     @Override
     public void registerUser(User user) throws SQLException {
         String sqlStr = "insert into user values(?,?,?,?,?)";

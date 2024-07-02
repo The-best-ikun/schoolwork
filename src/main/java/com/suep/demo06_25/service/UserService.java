@@ -14,7 +14,8 @@ public class UserService {
         userDAO = new UserDAOImpl();
     }
 
-    public void register(String id, String password1, String password2, String phone, String email) throws Exception {
+    //判断是否注册成功
+    public boolean register(String id, String password1, String password2, String phone, String email) throws Exception {
 
         // 根据id判断用户身份
         String identity = determineIdentity(id);
@@ -22,8 +23,16 @@ public class UserService {
         // 创建User对象
         User user = new User(id, password1, email, phone, identity);
 
-        // 调用DAO层的方法注册用户
-        userDAO.registerUser(user);
+        //检验账号是否已被注册
+        if(userDAO.checkRegister(user)){
+            // 调用DAO层的方法注册用户
+            userDAO.registerUser(user);
+            return true;
+        }else {
+            return false;
+        }
+
+
     }
 
     public boolean signIn(String id,String password){
