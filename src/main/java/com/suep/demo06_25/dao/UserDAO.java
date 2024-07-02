@@ -10,4 +10,5 @@ public interface UserDAO {
 
     // 用户登录
     boolean signInUser(User user) throws SQLException;
+    boolean checkRegister(User user) throws SQLException;
 }

@@ -1,10 +1,14 @@
 package com.suep.demo06_25.controller;
 
 import com.suep.demo06_25.service.UserService;
+import com.suep.demo06_25.utils.MySQLUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class SignUpController {
     @FXML
@@ -54,13 +58,14 @@ public class SignUpController {
             return;
         }
         try {
-            userService.register(idText, passwordText1, passwordText2, phoneText, emailText);
+            if(userService.register(idText, passwordText1, passwordText2, phoneText, emailText)){
+                showSuccessAlert();
+            }else {
+                showFailureAlert();
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-        showSuccessAlert();
-
     }
 
     private void showSuccessAlert() {
@@ -70,4 +75,13 @@ public class SignUpController {
         alert.setContentText("请跳转到登录界面登录");
         alert.showAndWait();
     }
+    private void showFailureAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("账号注册");
+        alert.setHeaderText("注册失败");
+        alert.setContentText("账号已存在");
+        alert.showAndWait();
+    }
+
+
 }
