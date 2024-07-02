@@ -1,4 +1,4 @@
-package com.suep.demo06_25.untils;
+package com.suep.demo06_25.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 
 
-public class MySQLUntil {
+public class MySQLUtil {
     private static final String PROPERTIES_FILE = "database.properties";
     private static String url;
     private static String username;
@@ -26,7 +26,7 @@ public class MySQLUntil {
         InputStream inputStream = null;
 
         try {
-            inputStream = MySQLUntil.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE);
+            inputStream = MySQLUtil.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE);
             if (inputStream == null) {
                 throw new RuntimeException("Property file " + PROPERTIES_FILE + "路径不正确");
             }

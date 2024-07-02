@@ -1,4 +1,4 @@
-package com.suep.demo06_25.model;
+package com.suep.demo06_25.pojo;
 
 public class User {
     private String id;
@@ -14,6 +14,7 @@ public class User {
         this.phone = phone;
         this.identity = identity;
     }
+    public User(){}
 
     // Getter和Setter方法
     public String getId() {
