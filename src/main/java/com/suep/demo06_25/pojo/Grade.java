@@ -1,15 +1,13 @@
 package com.suep.demo06_25.pojo;
 
-import java.math.BigDecimal;
-import com.mysql.cj.result.BigDecimalValueFactory;
 
 public class Grade {
     private String sno;
     private String tno;
     private String cno;
-    private BigDecimal grade;
+    private double grade;
 
-    public Grade(String sno, String tno, String cno, BigDecimal grade) {
+    public Grade(String sno, String tno, String cno, double grade) {
         this.sno = sno;
         this.tno = tno;
         this.cno = cno;
@@ -40,11 +38,11 @@ public class Grade {
         this.cno = cno;
     }
 
-    public BigDecimal getGrade() {
+    public double getGrade() {
         return grade;
     }
 
-    public void setGrade(BigDecimal grade) {
+    public void setGrade(double grade) {
         this.grade = grade;
     }
 }
