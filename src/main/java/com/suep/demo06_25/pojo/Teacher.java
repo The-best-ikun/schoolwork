@@ -68,8 +68,8 @@ public class Teacher {
         this.professional = professional;
     }
 
-    public Date getStarttime() {
-        return starttime;
+    public java.sql.Date getStarttime() {
+        return (java.sql.Date) starttime;
     }
 
     public void setStarttime(Date starttime) {

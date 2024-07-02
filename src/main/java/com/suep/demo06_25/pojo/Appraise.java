@@ -4,7 +4,7 @@ package com.suep.demo06_25.pojo;
 import com.mysql.cj.result.BigDecimalValueFactory;
 import java.math.BigDecimal;
 
-public class Appraise {
+public class Appraise { //评教
   private String sno;
    private String tno;
    private BigDecimal grade;

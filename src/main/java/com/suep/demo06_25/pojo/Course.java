@@ -5,19 +5,25 @@ public class Course {
    private String name;
    private String location;
    private String day;
+   private String time;
    private int credit;
 
-    public Course(String cno, String name, String location, String day, int credit) {
+    public Course(String cno, String name, String location, String day, String time, int credit) {
         this.cno = cno;
         this.name = name;
         this.location = location;
         this.day = day;
+        this.time = time;
         this.credit = credit;
     }
 
     public String getCno() {
         return cno;
     }
+
+    public String getTime() {return time;}
+
+    public void setTime(String time) {this.time = time;}
 
     public void setCno(String cno) {
         this.cno = cno;
