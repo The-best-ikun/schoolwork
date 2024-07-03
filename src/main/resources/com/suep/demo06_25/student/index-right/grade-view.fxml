@@ -7,8 +7,8 @@
    <children>
       <TableView fx:id="tableView" layoutX="19.0" layoutY="14.0" onSort="#onTableView" prefHeight="367.0" prefWidth="244.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="tableColumn1" onEditStart="#onTableColumn1" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="tableColumn2" onEditStart="#onTableColumn2" prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
       <Label layoutX="270.0" layoutY="37.0" prefHeight="42.0" prefWidth="61.0" style="-fx-background-color: orange;" text="平均绩点" />

@@ -18,7 +18,7 @@
       <PasswordField fx:id="password" layoutX="211.0" layoutY="145.0" text="666666" />
       <Label fx:id="info" layoutX="176.0" layoutY="267.0" prefHeight="35.0" prefWidth="273.0" text="提示信息暂定标签" textFill="#9e22d7" />
       <ImageView fx:id="verifyImage" fitHeight="29.0" fitWidth="101.0" layoutX="322.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true" />
-      <Hyperlink layoutX="166.0" layoutY="239.0" text="忘记密码？" />
+      <Hyperlink fx:id="hyperlink" layoutX="166.0" layoutY="239.0" onAction="#toHyperlink" text="忘记密码？" />
       <Label layoutX="144.0" layoutY="26.0" prefHeight="58.0" prefWidth="251.0" text="教务管理系统登录界面" textAlignment="CENTER" textFill="#406dff">
          <font>
             <Font name="YouYuan" size="24.0" />
