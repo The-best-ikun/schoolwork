@@ -17,7 +17,7 @@
       <Label fx:id="cno" layoutX="104.0" layoutY="217.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
       <Label fx:id="location" layoutX="104.0" layoutY="310.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
       <Label fx:id="day" layoutX="310.0" layoutY="217.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
-      <Label fx:id="Label" layoutX="310.0" layoutY="310.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
+      <Label fx:id="label" layoutX="310.0" layoutY="310.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
       <Label alignment="CENTER" layoutX="208.0" layoutY="310.0" prefHeight="32.0" prefWidth="102.0" style="-fx-background-color: orange;" text="课程具体时间" />
    </children>
 </AnchorPane>
