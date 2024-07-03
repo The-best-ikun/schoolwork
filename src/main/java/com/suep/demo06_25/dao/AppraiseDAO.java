@@ -21,4 +21,6 @@ public interface AppraiseDAO {
 
     //查所有
     List<Appraise> getAllAppraises();
+
+    List<Appraise> getAppraiseForStudent(String id);
 }

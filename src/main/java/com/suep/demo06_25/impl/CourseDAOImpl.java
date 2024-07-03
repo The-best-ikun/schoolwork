@@ -34,6 +34,12 @@ public class CourseDAOImpl implements CourseDAO {
     private static final String SELECT_ALL_COURSES =
             "select * from course";
 
+    private static  final String SELECT_STUDENT_ALL_CHOSEN_COURSE=
+            "SELECT * FROM Course JOIN Grade ON Course.cno = Grade.cno WHERE Grade.sno =?";
+
+
+
+
 //-----------------------------------
 
     @Override
@@ -113,12 +119,12 @@ public class CourseDAOImpl implements CourseDAO {
 
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String cno = resultSet.getString("sno");
+                String cno = resultSet.getString("cno");
                 String name = resultSet.getString("name");
-                String location = resultSet.getString("sex");
-                String day = resultSet.getString("age");
-                String time = resultSet.getString("classno");
-                int credit = resultSet.getInt("major");
+                String location = resultSet.getString("location");
+                String day = resultSet.getString("day");
+                String time = resultSet.getString("time");
+                int credit = resultSet.getInt("credit");
 
                 Course course = new Course(cno, name, location, day, time, credit);
                 courses.add(course);
@@ -128,4 +134,29 @@ public class CourseDAOImpl implements CourseDAO {
         }
         return courses;
     }
+    public List<Course> getChosenCourses(String sno) {//获得某个  学生已经选取的课程
+        List<Course> courses = new ArrayList<>();
+        try (Connection connection = MySQLUtil.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_STUDENT_ALL_CHOSEN_COURSE)) {
+            preparedStatement.setString(1,sno);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String cno = resultSet.getString("cno");
+                String name = resultSet.getString("name");
+                String location = resultSet.getString("location");
+                String day = resultSet.getString("day");
+                String time = resultSet.getString("time");
+                int credit = resultSet.getInt("credit");
+
+                Course course = new Course(cno, name, location, day, time, credit);
+                courses.add(course);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courses;
+    }
+
+
 }

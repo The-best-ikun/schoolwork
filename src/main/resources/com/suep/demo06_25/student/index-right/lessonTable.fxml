@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.LessonTableController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.student.LessonTableController">
    <children>
-      <TableView fx:id="tableView" layoutX="10.0" layoutY="10.0" onSort="#onTableView" prefHeight="362.0" prefWidth="583.0">
+      <TableView fx:id="tableView" layoutX="46.0" layoutY="88.0" prefHeight="208.0" prefWidth="502.0">
         <columns>
-          <TableColumn fx:id="firstColumn" prefWidth="75.0" />
-          <TableColumn prefWidth="75.0" text="周一" />
-            <TableColumn prefWidth="75.0" text="周二" />
-            <TableColumn prefWidth="75.0" text="周三" />
-            <TableColumn prefWidth="75.0" text="周四" />
-            <TableColumn prefWidth="75.0" text="周五" />
+          <TableColumn fx:id="cnoColumn" prefWidth="63.0" text="课程号" />
+          <TableColumn fx:id="nameColumn" prefWidth="105.0" text="课程名" />
+            <TableColumn fx:id="locationColumn" prefWidth="109.0" text="上课教室" />
+            <TableColumn fx:id="dayColumn" prefWidth="81.0" text="上课日" />
+            <TableColumn fx:id="timeColumn" prefWidth="87.0" text="上课时间" />
+            <TableColumn fx:id="creditColumn" prefWidth="56.0" text="学分" />
         </columns>
       </TableView>
    </children>

@@ -1,4 +1,4 @@
-package com.suep.demo06_25.controller;
+package com.suep.demo06_25.controller.student;
 
 import com.suep.demo06_25.Main;
 import com.suep.demo06_25.pojo.Student;
@@ -23,17 +23,16 @@ public class BasicInfoController {
         private Label phone;
         @FXML
         private Label address;
-        @FXML
-        private Label startime;
+
         @FXML
         private Label date;
 
 
         private StudentService studentService;
-        public BasicInfoController(){
+        //构造方法未完成前，还不能访问到组件，但是可以使用JavaFX的生命周期函数，而且不用加注解
+        public BasicInfoController(){}
+        public void initialize(){
             studentService =new StudentService();
-
-
             Student student=studentService.getStudent(Main.getId());
             sno.setText(student.getSno());
             name.setText(student.getName());
@@ -42,9 +41,7 @@ public class BasicInfoController {
             major.setText(student.getMajor());
             phone.setText(student.getPhone());
             address.setText(student.getAddress());
-            startime.setText(student.getstartime());
             date.setText(student.getTime().toString());
-
         }
 }
 

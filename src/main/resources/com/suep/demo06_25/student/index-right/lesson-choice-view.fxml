@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.student.LessonChoiceView">
+<AnchorPane prefHeight="400.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.student.LessonChoiceViewController">
    <children>
-      <TableView fx:id="tableView" layoutX="16.0" layoutY="13.0" onSort="#onTableView" prefHeight="366.0" prefWidth="248.0">
+      <TableView fx:id="tableView" layoutX="16.0" layoutY="13.0" onSort="#onTableView" prefHeight="366.0" prefWidth="371.0">
         <columns>
-          <TableColumn fx:id="tableColumn1" onEditStart="#onTableColumn1" prefWidth="75.0" text="C1" />
-          <TableColumn fx:id="tableColumn2" onEditStart="#onTableColumn2" prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="cnoColumn" prefWidth="61.0" text="课程号" />
+          <TableColumn fx:id="nameColumn" prefWidth="79.0" text="课程名" />
+            <TableColumn fx:id="locationColumn" prefWidth="84.0" text="课程教室" />
+            <TableColumn fx:id="dayColumn" prefWidth="56.0" text="课程日" />
+            <TableColumn fx:id="timeColumn" prefWidth="91.0" text="课程具体时间" />
+            <TableColumn fx:id="creditColumn" prefWidth="75.0" text="学分" />
         </columns>
       </TableView>
-      <Label alignment="CENTER" layoutX="284.0" layoutY="39.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="课程号" />
-      <Label fx:id="cno" layoutX="356.0" layoutY="39.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label" />
-      <Label alignment="CENTER" layoutX="284.0" layoutY="101.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="课程名" />
-      <Label fx:id="name" layoutX="356.0" layoutY="101.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label" />
-      <Label alignment="CENTER" layoutX="284.0" layoutY="163.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="课程教室" />
-      <Label alignment="CENTER" layoutX="284.0" layoutY="218.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="课程日" />
-      <Label fx:id="location" layoutX="356.0" layoutY="163.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label" />
-      <Label fx:id="day" layoutX="356.0" layoutY="218.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label" />
-      <Label alignment="CENTER" layoutX="284.0" layoutY="272.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: orange;" text="课程具体时间" />
-      <Label fx:id="label" layoutX="381.0" layoutY="272.0" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: grey;" text="Label" />
-      <Button fx:id="button1" layoutX="288.0" layoutY="330.0" mnemonicParsing="false" onAction="#onButton1" prefHeight="33.0" prefWidth="109.0" text="确认选课" />
-      <Button fx:id="button2" layoutX="431.0" layoutY="330.0" mnemonicParsing="false" onAction="#onButton2" prefHeight="33.0" prefWidth="109.0" text="确认退课" />
+      <Label alignment="CENTER" layoutX="401.0" layoutY="39.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="课程号" />
+      <Label fx:id="cno" layoutX="472.0" layoutY="39.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label1" />
+      <Label alignment="CENTER" layoutX="401.0" layoutY="85.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="课程名" />
+      <Label fx:id="name" layoutX="472.0" layoutY="85.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label" />
+      <Label alignment="CENTER" layoutX="401.0" layoutY="139.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="课程教室" />
+      <Label alignment="CENTER" layoutX="401.0" layoutY="184.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="课程日" />
+      <Label fx:id="courseLocation" layoutX="472.0" layoutY="139.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label" />
+      <Label fx:id="day" layoutX="472.0" layoutY="184.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label" />
+      <Label alignment="CENTER" layoutX="401.0" layoutY="233.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: orange;" text="课程具体时间" />
+      <Label fx:id="time" layoutX="498.0" layoutY="233.0" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: grey;" text="Label" />
+      <Button fx:id="button1" layoutX="407.0" layoutY="346.0" mnemonicParsing="false" onAction="#onButton1" prefHeight="33.0" prefWidth="109.0" text="确认选课" />
+      <Button fx:id="button2" layoutX="537.0" layoutY="346.0" mnemonicParsing="false" onAction="#onButton2" prefHeight="33.0" prefWidth="109.0" text="确认退课" />
+      <Label alignment="CENTER" layoutX="401.0" layoutY="290.0" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: orange;" text="学分" />
+      <Label fx:id="credit" layoutX="472.0" layoutY="290.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Label" />
    </children>
 </AnchorPane>

@@ -53,6 +53,7 @@ public class LoginController {
 
     @FXML
     public  void  login(){
+        verify.setText(VerifyImageUtil.verifyStr);//不用懒得填验证码，后面记得删掉
         String accountText=account.getText();
         String passwordText=password.getText();
         String verifyText=verify.getText();
@@ -73,7 +74,15 @@ public class LoginController {
         }
         if (userService.signIn(accountText,passwordText)){
             //登录成功进入主页
-            intoIndex();
+            Main.setId(account.getText());
+            if(Integer.parseInt(accountText.substring(0,4))>2000){
+                intoIndex1();//学生
+            } else if (Integer.parseInt(accountText.substring(0,4))>=1000&&Integer.parseInt(accountText.substring(0,4))<=2000) {
+                intoIndex2();//老师
+            }else{
+                intoIndex3();//管理员
+            }
+
         }else{
             info.setText("用户ID或密码错误");
         }
@@ -81,10 +90,28 @@ public class LoginController {
     }
 
     //点击注册转换窗口的方法
+    @FXML
     public void intoSignUp(){
         Main.changeView("signup-view.fxml");
     }
     //登录成功进入首页窗口
-    public void intoIndex(){Main.changeView("index-view.fxml");}
+//       public void intoIndex(){Main.changeView("index-view.fxml");}
+    public void intoIndex1(){
+        Main.changeView("/com/suep/demo06_25/student/index-view.fxml");
+
+    }
+    public void intoIndex2(){
+        Main.changeView("/com/suep/demo06_25/teacher/teacher-index-view.fxml");
+    }
+    public void intoIndex3(){
+        Main.changeView("/com/suep/demo06_25/admin/admin-index-view.fxml");
+
+    }
+
+    //进入忘记密码的窗口
+
+    @FXML
+    void onHyperlink(){}
+
 
 }

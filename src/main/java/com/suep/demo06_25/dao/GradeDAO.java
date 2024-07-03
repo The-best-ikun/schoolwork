@@ -1,7 +1,6 @@
 package com.suep.demo06_25.dao;
 
 import com.suep.demo06_25.pojo.Grade;
-import com.suep.demo06_25.pojo.Student;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -21,5 +20,9 @@ public interface GradeDAO {
 
     //查所有
     List<Grade> getAllGrades();
+
+    List<Grade> getGradeBySno(String id);
+
+    List<Grade> getGradeByTno(String id);
 }
 

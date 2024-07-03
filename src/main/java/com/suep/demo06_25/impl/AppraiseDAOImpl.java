@@ -29,9 +29,11 @@ public class AppraiseDAOImpl implements AppraiseDAO {
     private static final String SELECT_APPRAISE_SQL =
             "select * from appraise where sno=? and tno=?";
 
-    //查询所有成绩
+    //查询所有评价
     private static final String SELECT_ALL_APPRAISES =
             "select * from appraise";
+    private static final String SELECT_APPRAISES_BY_SNO =
+            "select * from appraise where sno= ? and grade is not null";//这里的逻辑就是一旦学生选了某个老师的课后就会在appraise里插入一个grade和appriase
 
 //-----------------------------------
 
@@ -110,7 +112,7 @@ public class AppraiseDAOImpl implements AppraiseDAO {
                 String sno1 = resultSet.getString("sno");
                 String tno1 = resultSet.getString("tno");
                 Double grade1 = resultSet.getDouble("grade");
-                String appraise1 = resultSet.getString("grade");
+                String appraise1 = resultSet.getString("appraise");
                 Appraise appraise2 = new Appraise(sno1, tno1,grade1,appraise1);
                 appraises.add(appraise2);
             }
@@ -118,5 +120,27 @@ public class AppraiseDAOImpl implements AppraiseDAO {
             e.printStackTrace();
         }
         return appraises;
+    }
+
+    @Override
+    public List<Appraise> getAppraiseForStudent(String id) {
+        List<Appraise> appraises = new ArrayList<>();
+        try (Connection connection = MySQLUtil.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_APPRAISES_BY_SNO)) {
+            preparedStatement.setString(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String sno1 = resultSet.getString("sno");
+                String tno1 = resultSet.getString("tno");
+                Double grade1 = resultSet.getDouble("grade");
+                String appraise1 = resultSet.getString("appraise");
+                Appraise appraise2 = new Appraise(sno1, tno1,grade1,appraise1);
+                appraises.add(appraise2);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return appraises;
+
     }
 }

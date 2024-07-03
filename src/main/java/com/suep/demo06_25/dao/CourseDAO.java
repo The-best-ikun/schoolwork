@@ -21,4 +21,7 @@ public interface CourseDAO {
 
     //查所有
     List<Course> getAllCourses();
+    //获取该学号已经选修的课程
+
+    List<Course> getChosenCourses(String sno);
 }

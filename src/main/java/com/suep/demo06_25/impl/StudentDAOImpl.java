@@ -131,6 +131,8 @@ public class StudentDAOImpl implements StudentDAO {
                 byte[] picture = resultSet.getBytes("picture");
 
                 student = new Student(sno, name, sex, classno,age, major, phone, address, dept, time, picture);
+            }else{
+                System.out.println("没有该用户的信息");
             }
         } catch (SQLException e) {
             e.printStackTrace();

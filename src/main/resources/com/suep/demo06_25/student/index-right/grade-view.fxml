@@ -6,11 +6,11 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.student.GradeViewController">
    <children>
       <TableView fx:id="tableView" layoutX="19.0" layoutY="14.0" onSort="#onTableView" prefHeight="367.0" prefWidth="244.0">
-        <columns>
-          <TableColumn fx:id="tableColumn1" onEditStart="#onTableColumn1" prefWidth="75.0" text="C1" />
-          <TableColumn fx:id="tableColumn2" onEditStart="#onTableColumn2" prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
+         <columns>
+            <TableColumn fx:id="tnoColumn" prefWidth="75.0" text="教师工号" />
+            <TableColumn fx:id="cnoColumn" prefWidth="75.0" text="课程号" />
+            <TableColumn fx:id="gradeColumn" prefWidth="93.0" text="成绩" />
+         </columns></TableView>
       <Label layoutX="270.0" layoutY="37.0" prefHeight="42.0" prefWidth="61.0" style="-fx-background-color: orange;" text="平均绩点" />
       <Label fx:id="label" layoutX="330.0" layoutY="37.0" prefHeight="42.0" prefWidth="172.0" style="-fx-background-color: grey;" text="这里去网上随便找个算法吧" />
    </children>

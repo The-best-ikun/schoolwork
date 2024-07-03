@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 
+import static com.suep.demo06_25.Main.changeView;
 import static com.suep.demo06_25.Main.loadRightFXML;
 
 public class IndexController {
@@ -27,7 +28,7 @@ public class IndexController {
     @FXML
     private void initialize() {
         // 初始加载第一个FXML文件
-        loadRightFXML("student/index-right/student-crud-view",scrollPane);
+        loadRightFXML("student/index-right/basicInfo-view.fxml",scrollPane);
         System.out.println("加载右端初始界面");
 
     }
@@ -35,29 +36,30 @@ public class IndexController {
 
     @FXML
     private void onButton1(){
-        loadRightFXML("admin/index-right/student-crud-view",scrollPane);
-        System.out.println("有反应吗");
+        loadRightFXML("student/index-right/basicInfo-view.fxml",scrollPane);
     }
     @FXML
     private void onButton2(){
-        loadRightFXML("student/index-right/lessonTable.fxml",scrollPane);
+        loadRightFXML("student/index-right/grade-view.fxml",scrollPane);
         System.out.println("有反应吗");
     }
     @FXML
     private void onButton3(){
+        loadRightFXML("student/index-right/lessonTable.fxml",scrollPane);
 
     }
     @FXML
     private void onButton4(){
+        loadRightFXML("student/index-right/lesson-choice-view.fxml",scrollPane);
 
     }
     @FXML
     private void onButton5(){
-
+        loadRightFXML("student/index-right/appraise-view.fxml",scrollPane);
     }
     @FXML
     private void onButton6(){
-
+        changeView("/com/suep/demo06_25/login-view.fxml");
     }
 
 

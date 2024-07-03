@@ -5,10 +5,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.teacher.WorkLessonViewController">
    <children>
-      <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" onSort="#onTableView" prefHeight="150.0" prefWidth="568.0">
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" onSort="#onTableView" prefHeight="187.0" prefWidth="547.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="cnoColumn" prefWidth="75.0" text="课程号" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="课程名" />
+            <TableColumn fx:id="locationColumn" prefWidth="75.0" text="课程教室" />
+            <TableColumn fx:id="dayColumn" prefWidth="75.0" text="上课日" />
+            <TableColumn fx:id="timeColumn" prefWidth="143.0" text="上课具体时间" />
+            <TableColumn fx:id="creditColumn" prefWidth="103.0" text="学分" />
         </columns>
       </TableView>
       <Label alignment="CENTER" layoutX="28.0" layoutY="217.0" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: orange;" text="课程号" />
@@ -17,7 +21,7 @@
       <Label fx:id="cno" layoutX="104.0" layoutY="217.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
       <Label fx:id="location" layoutX="104.0" layoutY="310.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
       <Label fx:id="day" layoutX="310.0" layoutY="217.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
-      <Label fx:id="Label" layoutX="310.0" layoutY="310.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
+      <Label  layoutX="310.0" layoutY="310.0" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: grey;" text="Label" />
       <Label alignment="CENTER" layoutX="208.0" layoutY="310.0" prefHeight="32.0" prefWidth="102.0" style="-fx-background-color: orange;" text="课程具体时间" />
    </children>
 </AnchorPane>

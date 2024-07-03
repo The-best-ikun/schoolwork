@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.BasicInfoController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.student.BasicInfoController">
    <children>
       <ImageView fitHeight="192.0" fitWidth="164.0" layoutX="43.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
       <Label alignment="CENTER" layoutX="235.0" layoutY="93.0" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #fc5185;" text="姓名" />

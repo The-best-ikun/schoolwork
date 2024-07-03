@@ -1,9 +1,11 @@
 package com.suep.demo06_25.controller.admin;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class TeacherCrudViewController {
+    public TextField textFiled5;
     @FXML
     private TableView tableView;
     @FXML
@@ -32,4 +34,24 @@ public class TeacherCrudViewController {
     private Button button4;//修改教师信息按钮
     @FXML
     private Button button5;//删除教师信息按钮
+    @FXML
+    private void onTableView(){}
+
+    public void onDatePicker(ActionEvent actionEvent) {
+    }
+
+    public void onButton1(ActionEvent actionEvent) {
+    }
+
+    public void onButton2(ActionEvent actionEvent) {
+    }
+
+    public void onButton3(ActionEvent actionEvent) {
+    }
+
+    public void onButton4(ActionEvent actionEvent) {
+    }
+
+    public void onButton5(ActionEvent actionEvent) {
+    }
 }
