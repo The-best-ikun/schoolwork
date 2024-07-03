@@ -12,6 +12,6 @@
         </columns>
       </TableView>
       <Label layoutX="270.0" layoutY="37.0" prefHeight="42.0" prefWidth="61.0" style="-fx-background-color: orange;" text="平均绩点" />
-      <Label layoutX="330.0" layoutY="37.0" prefHeight="42.0" prefWidth="172.0" style="-fx-background-color: grey;" text="这里去网上随便找个算法吧" />
+      <Label fx:id="label" layoutX="330.0" layoutY="37.0" prefHeight="42.0" prefWidth="172.0" style="-fx-background-color: grey;" text="这里去网上随便找个算法吧" />
    </children>
 </AnchorPane>
