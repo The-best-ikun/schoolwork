@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="584.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.admin.ReviewCourseViewController">
+<AnchorPane prefHeight="584.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.suep.demo06_25.controller.admin.ReviewCourseViewController">
    <children>
-      <TableView layoutX="14.0" layoutY="20.0" prefHeight="248.0" prefWidth="717.0">
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="20.0" onSort="#onTableView" prefHeight="248.0" prefWidth="717.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
       <Label alignment="CENTER" layoutX="33.0" layoutY="301.0" prefHeight="33.0" prefWidth="82.0" style="-fx-background-color: orange;" text="课程号" />
-      <Label layoutX="115.0" layoutY="301.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
+      <Label fx:id="label1" layoutX="115.0" layoutY="301.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
       <Label alignment="CENTER" layoutX="33.0" layoutY="375.0" prefHeight="33.0" prefWidth="82.0" style="-fx-background-color: orange;" text="申请人工号" />
       <Label alignment="CENTER" layoutX="33.0" layoutY="444.0" prefHeight="33.0" prefWidth="82.0" style="-fx-background-color: orange;" text="课程名" />
       <Label alignment="CENTER" layoutX="33.0" layoutY="513.0" prefHeight="33.0" prefWidth="82.0" style="-fx-background-color: orange;" text="课程位置" />
       <Label alignment="CENTER" layoutX="261.0" layoutY="301.0" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: orange;" text="课程具体时间" />
       <Label alignment="CENTER" layoutX="261.0" layoutY="375.0" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: orange;" text="课程学分" />
       <Label alignment="CENTER" layoutX="261.0" layoutY="444.0" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: orange;" text="提交申请时间" />
-      <Button layoutX="555.0" layoutY="313.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="144.0" text="确认审核通过" />
-      <Button layoutX="555.0" layoutY="423.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="144.0" text="确认审核不通过" />
-      <Label layoutX="115.0" layoutY="375.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
-      <Label layoutX="115.0" layoutY="444.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
-      <Label layoutX="115.0" layoutY="513.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
-      <Label layoutX="383.0" layoutY="301.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
-      <Label layoutX="383.0" layoutY="375.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
-      <Label layoutX="383.0" layoutY="444.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
+      <Button fx:id="button1" layoutX="555.0" layoutY="313.0" mnemonicParsing="false" onAction="#onButton1" prefHeight="42.0" prefWidth="144.0" text="确认审核通过" />
+      <Button fx:id="button2" layoutX="555.0" layoutY="423.0" mnemonicParsing="false" onAction="#onButton2" prefHeight="42.0" prefWidth="144.0" text="确认审核不通过" />
+      <Label fx:id="label2" layoutX="115.0" layoutY="375.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
+      <Label fx:id="label3" layoutX="115.0" layoutY="444.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
+      <Label fx:id="label4" layoutX="115.0" layoutY="513.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
+      <Label fx:id="label5" layoutX="383.0" layoutY="301.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
+      <Label fx:id="label6" layoutX="383.0" layoutY="375.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
+      <Label fx:id="label7" layoutX="383.0" layoutY="444.0" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Label" />
    </children>
 </AnchorPane>
