@@ -1,16 +1,15 @@
 package com.suep.demo06_25.pojo;
 
 
-import com.mysql.cj.result.BigDecimalValueFactory;
 import java.math.BigDecimal;
 
 public class Appraise { //评教
   private String sno;
    private String tno;
-   private BigDecimal grade;
+   private Double grade;
    private String appraise;
 
-    public  Appraise(String sno, String tno, BigDecimal grade, String appraise) {
+    public  Appraise(String sno, String tno, Double grade, String appraise) {
         this.sno = sno;
         this.tno = tno;
         this.grade = grade;
@@ -33,11 +32,11 @@ public class Appraise { //评教
         this.tno = tno;
     }
 
-    public BigDecimal getGrade() {
+    public double getGrade() {
         return grade;
     }
 
-    public void setGrade(BigDecimal grade) {
+    public void setGrade(Double grade) {
         this.grade = grade;
     }
 
