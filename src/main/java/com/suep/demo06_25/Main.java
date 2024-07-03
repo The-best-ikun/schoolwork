@@ -16,8 +16,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main extends Application {
+    static  String id;
     public static void main(String[] args) throws ClassNotFoundException {
         launch(args);
+    }
+
+    public static String getId() {
+        return id;
     }
 
     private static Stage stage;
