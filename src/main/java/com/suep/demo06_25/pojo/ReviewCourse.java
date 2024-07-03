@@ -1,8 +1,7 @@
 package com.suep.demo06_25.pojo;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import java.util.Date;
-public class ReviewCourse {
+public class ReviewCourse {  //审核课程
     private String cno;
     private String tno;
     private String name;
@@ -10,10 +9,10 @@ public class ReviewCourse {
     private String day;
     private String time;
     private int credit;
-    private Date committee;
+    private Date committime;
     private  String state;
 
-    public ReviewCourse(String cno, String tno, String name, String location, String day, String time, int credit, Date committee, String state) {
+    public ReviewCourse(String cno, String tno, String name, String location, String day, String time, int credit, Date committime, String state) {
         this.cno = cno;
         this.tno = tno;
         this.name = name;
@@ -21,7 +20,7 @@ public class ReviewCourse {
         this.day = day;
         this.time = time;
         this.credit = credit;
-        this.committee = committee;
+        this.committime = committime;
         this.state = state;
     }
 
@@ -81,12 +80,12 @@ public class ReviewCourse {
         this.credit = credit;
     }
 
-    public Date getCommittee() {
-        return committee;
+    public java.sql.Date getCommittime() {
+        return (java.sql.Date) committime;
     }
 
-    public void setCommittee(Date committee) {
-        this.committee = committee;
+    public void setCommittime(Date committime) {
+        this.committime = committime;
     }
 
     public String getState() {
