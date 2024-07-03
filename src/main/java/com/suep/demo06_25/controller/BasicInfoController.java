@@ -31,7 +31,7 @@ public class BasicInfoController {
 
 
         Student student=studentService.getStudent(Main.getId());
-        label1.setText(student.);
+        label1.setText(student);
     }
 
 
